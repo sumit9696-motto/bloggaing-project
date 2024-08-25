@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="h2 text-center"><b>My</b> <b style="color:#ffc107;">Blogs <i class="fa fa-rss-square"></i></b></div>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Sr. No.</th>
+      <th scope="col">Blog Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Attachment</th>
+      <th scope="col">Thumbnail</th>
+      <th scope="col">Blog Date</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% if blogdata %}
+  {% for i in blogdata %}
+    <tr>
+      <th scope="row">1</th>
+      <td>{{i.blogcategory}}</td>
+      <td>{{i.topic}}</td>
+      <td>{{i.description}}</td>
+        <td><a href="/{{i.attachment}}"><i class="fa fa-download" style="font-size:25px; color:blue;"></i></a></td>
+      <td><img src="/{{i.thumbnail}}" width="80px" height="80px"/></td>
+      <td>{{i.bdate}}</td>
+    </tr>
+  {% endfor %}
+  {% endif %}
+  </tbody>
+</table>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+{% endblock %}

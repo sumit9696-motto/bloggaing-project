@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="row">
+    <div class="h2 text-center"><b>Sign</b> <b style="color:#0080ff;">Up <i class="fa fa-users"></i></b></div>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 p-2 bg-light">
+
+        <form method="post" autocomplete="off" enctype="multipart/form-data">
+            {% csrf_token %}
+            Name:<input type="text" name="sname" required class="form-control" placeholder="Enter your Name"/>
+            D.O.B.<input type="date" name="dob" required class="form-control" placeholder="Enter your DOB"/>
+            Gender:<br/><input type="radio" name="gender" value="Male" required/> Male
+            <input type="radio" name="gender" value="Female" required/> Female
+            <input type="radio" name="gender" value="Other" required/> Other<br/>
+            Mobile Number:<input type="number" name="mobile" required class="form-control"
+                                 placeholder="Enter your Mo.No."/>
+            Email Id:<input type="email" name="email" required class="form-control" placeholder="Enter your email"/>
+            Password:<input type="password" name="password" required class="form-control" placeholder="Enter Password"/>
+            Confirm Password:<input type="password" name="passwd" required class="form-control"
+                                    placeholder="Re-enter Password"/>
+            Profession:<textarea class="form-control txta" name="profession" style="min-height:60px;"
+                                 placeholder="Enter your profession.." required></textarea>
+            College/Company:<textarea class="form-control txta" name="college" placeholder="Enter your College/Company"
+                                      required></textarea>
+            Profile:<input type="file" name="profile" required class="form-control"/>
+            <input class="mt-1" type="submit" value="save" style="background:#0080ff; min-width:25%;"/>
+        </form>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+
+{% endblock %}

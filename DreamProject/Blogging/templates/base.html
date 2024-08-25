@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coder Hub</title>
+    <link href="{% static 'images/icon1.jpg' %}" rel="icon" />
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/font-awesome.css'  %}" rel="stylesheet"/>
+    <script src="{%static 'js/bootstrap.js'%}"></script>
+    <style>
+        .header
+        {
+        min-height:40px;
+        background:#ffffff;
+        text-align:center;
+        }
+        .ic
+        {
+        height:25px;
+        width:25px;
+        border-radius:40px;
+        border:1px solid:#ffc107 ;
+        padding-top:2px;
+        }
+        .ic:hover
+        {
+        background:gray;
+        transition:all ease 1s;
+        transform:rotate(360deg);
+        }
+        .menu
+        {
+        min-height:60px;
+        background:#ffffff;
+        }
+        #menu ul li a
+        {
+        color:white;
+        margin:5px;
+        }
+        #menu ul li a:hover
+        {
+        color:#ffbb33;
+        background:white;
+        border-radius:50px;
+        transition:all ease .5s;
+        }
+        .category
+        {
+        min-height:200px;
+        }
+        .clr
+        {
+        color:black;
+        }
+        .clr:hover
+        {
+        color:white;
+        }
+        .blog
+        {
+        min-height:800px;
+        }
+        .blr
+        {
+        color:black;
+        }
+        .blr:hover
+        {
+        color:orange;
+        }
+        .blog ol li a
+        {
+        color:black;
+        height:30px;
+        }
+        .blog ol li a:hover
+        {
+        color:#fbaf0d;
+        transform:scale(1.1);
+        transition:transform .2s;
+        }
+        .chb
+        {
+        min-height:3px;
+        }
+       .ufooter
+        {
+        background:#232323;
+        min-height:200px;
+        color:white;
+        }
+        .footer
+        {
+        background:black;
+        color:white;
+        min-height:15px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row chb" style="background:#0080ff;"></div>
+    <div class="row header ">
+
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-2 fs-5 pt-1">
+                    <i class="fa fa-pencil-square"></i><b class="text-info">ENGINEERING </b><b>HUB</b>
+                </div>
+                <div class="col-sm-5 pt-2" style="padding-left:13%;">
+                   <nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+                </div>
+                <div class="col-sm-2 fs-5 pt-1 ps-5">
+                    <a href="#" style="text-decoration:none; color:white"><i
+                            class="fa fa-facebook ic" style="color:#1877f2;"></i></a>
+                    <a href="#" style="text-decoration:none; color:white"><i class="fa fa-instagram ic" style="color:#ed4951;"></i></a>
+                    <a href="#" style="text-decoration:none; color:white"><i
+                            class="fa fa-twitter ic" style="color:#5da9dd;"></i></a>
+                    <a href="#" style="text-decoration:none; color:white"><i class="fa fa-whatsapp ic"
+                                                                                              style="color:#28d347;"></i></a>
+                    <a href="#"
+                       style="text-decoration:none; color:white"><i class="fa fa-linkedin ic"
+                                                                    style="color:#cd201f;"></i></a>
+                </div>
+                <div class="col-sm-3 p-2">
+                    {% if request.session.user %}
+                    {{request.session.user }}
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row chb" style="background:#0080ff"></div>
+    <div class="row menu bg-dark">
+        <!-- start menu -->
+        <div class="col-sm-12">
+            <div class="row pt-1">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10" style="padding-left:5%;">
+                    <nav class="navbar navbar-expand-lg navbar-light" id="menu">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="/user/home/"> <i
+                                                class="fa fa-home"></i> Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/aboutus/"><i class="fa fa-info-circle"></i>
+                                            About Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/contactus/"><i
+                                                class="fa fa-map-marker fs-5"></i> Contact Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/myblogs/"><i class="fa fa-rss-square"></i> My
+                                            Blogs</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/createblogs/"><i class="fa fa-plus-square"></i>
+                                            Create Blogs</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/latestblogs/"><i class=" "></i>Latest Blogs</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/signup/"><i class="fa fa-user-plus"></i> Sign Up</a>
+                                    </li>
+
+                                    {% if request.session.user is None %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/signin/"><i class="fa fa-sign-in"></i> LogIn</a>
+                                    </li>
+                                    {% endif %}
+                                    {% if request.session.user %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/logout/"><i class="fa fa-sign-out"></i> Log Out</a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+        <!-- end menu -->
+        <div class="col-sm-1"></div>
+    </div>
+
+
+    <div class="row chb" style="background:#0080ff"></div>
+    <div class="row content">
+        <div class="col-sm-12">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <div class="row chb" style="background:#0080ff"></div>
+    <div class="row ufooter p-2">
+        <div class="col-sm-5 ">
+            <h4>About Us:</h4>
+            <p>
+                Engineering Hub. Where software engineers and tech experts connect.
+                It's also here where we share know-how, ideas and our passion for technology
+                .</p>
+        </div>
+        <div class="col-sm-2">
+            <h4>ENGINEERING HUB</h4>
+            <ul>
+                <a href="/user/home/" style="text-decoration:none; color:white">
+                    <li class="fa fa-home"> Home</li>
+                </a><br/>
+                <a href="/user/aboutus/" style="text-decoration:none; color:white">
+                    <li class="fa fa-info-circle"> About Us</li>
+                </a>
+                <li class="fa fa-lock"> Privacy Policy</li>
+                <li class="fa fa-home"> Services</li>
+                <li class="fa fa-home"> Terms & Conditions</li>
+            </ul>
+        </div>
+        <div class="col-sm-5">
+            <h4>Stay Connected Us:</h4>
+            <a href="#" style="text-decoration:none; color:white"><i class="fa fa-whatsapp ic ps-1"
+                                                                                      style="color:#55ef71;"></i> +91
+            9120471395</a><br/>
+            <a href="#" style="text-decoration:none; color:white"><i
+                    class="fa fa-twitter ic ps-1" style="color:#1d9bf0;"></i> sumitkrail@</a><br/>
+            <a href="#" style="text-decoration:none; color:white"><i
+                    class="fa fa-facebook ic ps-1" style="color:#1877f2;"></i>skr</a></br>
+            <a href="#" style="text-decoration:none; color:white"><i
+                    class="fa fa-instagram ic ps-1" style="color:#d22a53;"></i> skr</a><br/>
+            <a href="#" style="text-decoration:none; color:white"><i
+                    class="fa fa-linkedin ic ps-1" style="color:#b7081b;"></i>sumit@l101@gmail.com</a><br/>
+        </div>
+    </div>
+    <div class="row footer">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5">Developed By : <i>skr </i></div>
+        <div class="col-sm-5">Copyright © 2021 Engineering Hub. All rights reserved.</div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+</body>
+</html>

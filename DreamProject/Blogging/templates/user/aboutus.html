@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="h2 text-center"><b>About</b> <b style="color:#0080ff;">Us <i class="fa fa-info-circle"></i></b></div>
+    <div class="col-sm-5">
+        <center><img src="{% static 'images/5.jpeg'%}" style="min-width:50%;" class="img-thumbnail p-1 mb-4"/></center>
+    </div>
+    <div class="col-sm-7">
+        <center><div><h3><b>Welcome to the world of Coder Hub</b></h3></div>
+            <p style="text-align:justify;">Technical blogging is a great way to share your expertise while building a potentially valuable readership. It can help you to document projects, or provide guidance to other web users. You can also monetize your content, or use your blog to market your services.<br/>
+            Better Programming is a programming-oriented blog on Medium. They publish multiple articles every day from several authors, all curated and edited to ensure excellent content.</p>
+        </center>
+    </div>
+</div>
+{% endblock %}

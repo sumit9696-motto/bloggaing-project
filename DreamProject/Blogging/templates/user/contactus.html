@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<style>
+.form-control
+{
+margin-bottom:8px;
+}
+.txta
+{
+min-height:90px;
+}
+
+</style>
+<div class="row contact">
+    <div class="h2 text-center"><b>Contact</b><b style="color:#0080ff;"> Us <i class="fa fa-phone-square"></i></b></div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10 bg-light" style="min-height:400px">
+        <div class="row">
+            <div class="col-sm-5 p-4">
+                <form method="post">
+                    {% csrf_token %} <!-- cross site reforgery -->
+                    {% if S %}
+                    <div class="alert alert-warning">
+                        Thanks for Enquery..
+                    </div>
+                    {% endif %}
+                    Name<input type="text" name="name" required class="form-control" placeholder="Enter your Name"/>
+                    Mobile<input type="number" name="mobile" required class="form-control"
+                                 placeholder="Enter your Mo.No."/>
+                    Email<input type="email" name="email" required class="form-control" placeholder="Enter your email"/>
+                    Message<textarea class="form-control" name="message" style="min-height:90px;"
+                                     placeholder="Enter your message.." required></textarea>
+                    Address<textarea class="form-control txta" name="address" style="min-height:60px;"
+                                     placeholder="Enter Your address.." required></textarea>
+                    <input type="submit" style="background:#0080ff min-width:25%;" value="save"/>
+                </form>
+            </div>
+            <div class="col-sm-7">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114521.05779193774!2d81.17182518863089!3d26.23623772422909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399ba14166f655d1%3A0x24dffd072d377f70!2sRaebareli%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1633307623933!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+{% endblock %}
